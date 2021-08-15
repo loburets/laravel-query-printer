@@ -1,0 +1,13 @@
+{
+    "name": "loburets/laravel-query-printer",
+    "description": "An easy way to print queries and query logs in Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Loburets Dmitry",
+            "email": "dima-loburec@yandex.ru"
+        }
+    ],
+    "require": {}
+}
