@@ -24,7 +24,7 @@ class QueryPrinter
     public static function print($query, bool $returnAsString = false): ?string
     {
         $sql = $query->toSql();
-        $sql = self::getQueryString($sql, $query->getBindings());
+        $sql = self::insertBindingsToQueryString($sql, $query->getBindings());
 
         if ($returnAsString) {
             return $sql;
@@ -52,7 +52,7 @@ class QueryPrinter
         $queryLogOutput = [];
         $logs = DB::getQueryLog();
         foreach ($logs as $log) {
-            $singleQueryLogOutput = $log['time'] . 'ms: ' . self::getQueryString($log['query'], $log['bindings']);
+            $singleQueryLogOutput = $log['time'] . 'ms: ' . self::insertBindingsToQueryString($log['query'], $log['bindings']);
             $queryLogOutput[] = $singleQueryLogOutput;
             if (!$returnAsString) {
                 dump($singleQueryLogOutput);
@@ -67,7 +67,7 @@ class QueryPrinter
      * @param array $bindings
      * @return string
      */
-    public static function getQueryString(string $sql, array $bindings):string
+    public static function insertBindingsToQueryString(string $sql, array $bindings):string
     {
         $sql = str_replace('"', '`', $sql);
         // just for the raw queries to look like normal one line query in the console:
