@@ -9,5 +9,17 @@
             "email": "dima-loburec@yandex.ru"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Loburets\\LaravelQueryPrinter\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "QueryPrinter": "Loburets\\LaravelQueryPrinter\\Facade"
+            }
+        }
+    },
     "require": {}
 }
