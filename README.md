@@ -24,6 +24,8 @@ User::where('id', '<', '5')->get();
 
 Now you can simply copy and execute the query without struggling with bindings 🙌
 
+---
+
 ## 🚀 Installation
 
 ```Bash
@@ -35,6 +37,8 @@ For Laravel **< 5.5**, add the alias in `config/app.php`:
 ```PHP
 'QueryPrinter' => Loburets\LaravelQueryPrinter\Facade::class,
 ```
+
+---
 
 ## 🛠️ Usage
 
